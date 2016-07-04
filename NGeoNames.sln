@@ -1,19 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeoNames", "NGeoNames\NGeoNames.csproj", "{A5BC5A09-1185-465A-971B-DB86DBD73A84}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeoNamesTests", "NGeoNamesTests\NGeoNamesTests.csproj", "{A099E590-8239-4589-9355-E004D5F790C8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E63B5CF1-5A93-46E2-8D89-3BE36E8CE26C}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5AA06099-00A1-4527-944E-1A69E498D1FE}"
 	ProjectSection(SolutionItems) = preProject
 		buildnugetpackage.cmd = buildnugetpackage.cmd
@@ -25,10 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumpTester", "DumpTester\DumpTester.csproj", "{F3407F70-D016-40CD-A394-B56FACA6307B}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "NGeoNamesHelp", "NGeoNamesHelp.shfbproj", "{D6A78785-3434-4544-A495-B201AFBD0964}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A5BC5A09-1185-465A-971B-DB86DBD73A84} = {A5BC5A09-1185-465A-971B-DB86DBD73A84}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeoNames.Pcl", "NGeoNames.Pcl\NGeoNames.Pcl.csproj", "{18649BBE-2C2A-433C-A85C-0F2DD432FE9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KdTreeLib.Pcl", "KdTreeLib.Pcl\KdTreeLib.Pcl.csproj", "{EC5B97EB-D6E7-47F6-9733-6F98EFB1418E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KdTreeTestsLib", "KdTreeTestsLib\KdTreeTestsLib.csproj", "{4FCBB1BD-C02B-4804-8BC9-84C6C3F146F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeoNames.Tests", "NGeoNames.Tests\NGeoNames.Tests.csproj", "{7200C4EC-EE31-4824-874B-C8D7F3806C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,21 +28,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5BC5A09-1185-465A-971B-DB86DBD73A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5BC5A09-1185-465A-971B-DB86DBD73A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5BC5A09-1185-465A-971B-DB86DBD73A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5BC5A09-1185-465A-971B-DB86DBD73A84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A099E590-8239-4589-9355-E004D5F790C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A099E590-8239-4589-9355-E004D5F790C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A099E590-8239-4589-9355-E004D5F790C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A099E590-8239-4589-9355-E004D5F790C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3407F70-D016-40CD-A394-B56FACA6307B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3407F70-D016-40CD-A394-B56FACA6307B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3407F70-D016-40CD-A394-B56FACA6307B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3407F70-D016-40CD-A394-B56FACA6307B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6A78785-3434-4544-A495-B201AFBD0964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6A78785-3434-4544-A495-B201AFBD0964}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6A78785-3434-4544-A495-B201AFBD0964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18649BBE-2C2A-433C-A85C-0F2DD432FE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18649BBE-2C2A-433C-A85C-0F2DD432FE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18649BBE-2C2A-433C-A85C-0F2DD432FE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18649BBE-2C2A-433C-A85C-0F2DD432FE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5B97EB-D6E7-47F6-9733-6F98EFB1418E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5B97EB-D6E7-47F6-9733-6F98EFB1418E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5B97EB-D6E7-47F6-9733-6F98EFB1418E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5B97EB-D6E7-47F6-9733-6F98EFB1418E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FCBB1BD-C02B-4804-8BC9-84C6C3F146F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FCBB1BD-C02B-4804-8BC9-84C6C3F146F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FCBB1BD-C02B-4804-8BC9-84C6C3F146F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FCBB1BD-C02B-4804-8BC9-84C6C3F146F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7200C4EC-EE31-4824-874B-C8D7F3806C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7200C4EC-EE31-4824-874B-C8D7F3806C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7200C4EC-EE31-4824-874B-C8D7F3806C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7200C4EC-EE31-4824-874B-C8D7F3806C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

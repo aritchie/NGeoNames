@@ -1,3 +1,0 @@
-this!file!has!
-no!comments!and!
-no!empty!lines!

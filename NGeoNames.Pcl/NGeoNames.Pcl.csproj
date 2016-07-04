@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18649BBE-2C2A-433C-A85C-0F2DD432FE9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NGeoNames</RootNamespace>
+    <AssemblyName>NGeoNames</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="Resources\continentCodes.txt" />
+    <EmbeddedResource Include="Resources\featureClasses_en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Composers\Admin1CodeComposer.cs" />
+    <Compile Include="Composers\Admin2CodeComposer.cs" />
+    <Compile Include="Composers\AlternateNameComposer.cs" />
+    <Compile Include="Composers\BaseComposer.cs" />
+    <Compile Include="Composers\ContinentComposer.cs" />
+    <Compile Include="Composers\CountryInfoComposer.cs" />
+    <Compile Include="Composers\ExtendedGeoNameComposer.cs" />
+    <Compile Include="Composers\FeatureClassComposer.cs" />
+    <Compile Include="Composers\FeatureCodeComposer.cs" />
+    <Compile Include="Composers\GeoNameComposer.cs" />
+    <Compile Include="Composers\HierarchyComposer.cs" />
+    <Compile Include="Composers\IComposer.cs" />
+    <Compile Include="Composers\ISOLanguageCodeComposer.cs" />
+    <Compile Include="Composers\PostalcodeComposer.cs" />
+    <Compile Include="Composers\TimeZoneComposer.cs" />
+    <Compile Include="Composers\UserTagComposer.cs" />
+    <Compile Include="Entities\Admin1Code.cs" />
+    <Compile Include="Entities\Admin2Code.cs" />
+    <Compile Include="Entities\AlternateName.cs" />
+    <Compile Include="Entities\Continent.cs" />
+    <Compile Include="Entities\CountryInfo.cs" />
+    <Compile Include="Entities\ExtendedGeoName.cs" />
+    <Compile Include="Entities\FeatureClass.cs" />
+    <Compile Include="Entities\FeatureCode.cs" />
+    <Compile Include="Entities\GeoName.cs" />
+    <Compile Include="Entities\HierarchyNode.cs" />
+    <Compile Include="Entities\IGeoLocation.cs" />
+    <Compile Include="Entities\ISOLanguageCode.cs" />
+    <Compile Include="Entities\Postalcode.cs" />
+    <Compile Include="Entities\TimeZone.cs" />
+    <Compile Include="Entities\UserTag.cs" />
+    <Compile Include="GeoExtensionMethods.cs" />
+    <Compile Include="GeoFileReader.cs" />
+    <Compile Include="GeoFileWriter.cs" />
+    <Compile Include="GeoUtil.cs" />
+    <Compile Include="Parsers\Admin1CodeParser.cs" />
+    <Compile Include="Parsers\Admin2CodeParser.cs" />
+    <Compile Include="Parsers\AlternateNameParser.cs" />
+    <Compile Include="Parsers\BaseParser.cs" />
+    <Compile Include="Parsers\ContinentParser.cs" />
+    <Compile Include="Parsers\CountryInfoParser.cs" />
+    <Compile Include="Parsers\ExtendedGeoNameParser.cs" />
+    <Compile Include="Parsers\FeatureClassParser.cs" />
+    <Compile Include="Parsers\FeatureCodeParser.cs" />
+    <Compile Include="Parsers\GeoNameParser.cs" />
+    <Compile Include="Parsers\HierarchyParser.cs" />
+    <Compile Include="Parsers\IParser.cs" />
+    <Compile Include="Parsers\ISOLanguageCodeParser.cs" />
+    <Compile Include="Parsers\ParserException.cs" />
+    <Compile Include="Parsers\PostalcodeParser.cs" />
+    <Compile Include="Parsers\TimeZoneParser.cs" />
+    <Compile Include="Parsers\UserTagParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseGeoCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KdTreeLib.Pcl\KdTreeLib.Pcl.csproj">
+      <Project>{ec5b97eb-d6e7-47f6-9733-6f98efb1418e}</Project>
+      <Name>KdTreeLib.Pcl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Acr.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Acr.IO.3.0.0-beta4\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Acr.IO.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Acr.IO.3.0.0-beta4\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.IO.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
